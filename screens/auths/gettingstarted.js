@@ -40,7 +40,7 @@ const Gettingstarted = () => {
             mode="contained"
             style={[styles.btn, styles.btn2]}
             color="#000"
-            labelStyle={{ color: "green", fontWeight: "700" }}
+            labelStyle={{ color: "#043b30", fontWeight: "700" }}
             onPress={() => toggle_signup_modal()}
           >
             SignUp
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   btn1: {
-    backgroundColor: "green",
+    backgroundColor: "#043b30",
   },
 
   centeredView: {
