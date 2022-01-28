@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Dimensions,
   ImageBackground,
   StyleSheet,
-  Text,
+  Modal,
   View,
 } from "react-native";
 import { Button } from "react-native-paper";
+import Login from "./login";
 
 const Gettingstarted = () => {
+  const [loginmodal, setloginmodal] = useState(false);
+  const [signupmodal, setsignupmodal] = useState(false);
+  const toggle_login_modal = () => {
+    setloginmodal((prevstate) => !prevstate);
+  };
+  const toggle_signup_modal = () => {
+    setsignupmodal((prevstate) => !prevstate);
+  };
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -21,7 +31,7 @@ const Gettingstarted = () => {
             mode="contained"
             style={[styles.btn, styles.btn1]}
             labelStyle={{ fontWeight: "700" }}
-            onPress={() => console.log("Pressed")}
+            onPress={() => toggle_login_modal()}
           >
             SignIn
           </Button>
@@ -35,6 +45,24 @@ const Gettingstarted = () => {
             SignUp
           </Button>
         </View>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={loginmodal}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Login
+                toggle_login_modal={toggle_login_modal}
+                toggle_signup_modal={toggle_signup_modal}
+              />
+            </View>
+          </View>
+        </Modal>
       </ImageBackground>
     </View>
   );
@@ -68,5 +96,27 @@ const styles = StyleSheet.create({
   },
   btn1: {
     backgroundColor: "green",
+  },
+
+  centeredView: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginTop: 22,
+    width: "100%",
+  },
+  modalView: {
+    borderTopLeftRadius: 100,
+    height: Dimensions.get("screen").height / 1.8,
+    width: "100%",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });

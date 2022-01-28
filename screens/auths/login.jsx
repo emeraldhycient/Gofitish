@@ -1,72 +1,121 @@
 import React from "react";
-import {
-  Dimensions,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import { Button } from "react-native-paper";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { TextInput, Text, Button } from "react-native-paper";
 
-const login = () => {
+const Login = ({ toggle_login_modal, toggle_signup_modal }) => {
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/images/bentover.jpg")}
-        resizeMode="cover"
-        style={styles.image}
+      <View style={{ flexDirection: "row", marginBottom: 20 }}>
+        <Text style={{ color: "#fff", fontWeight: "800", fontSize: 32 }}>
+          Welcome Back Champ
+        </Text>
+        <View style={styles.dot}></View>
+      </View>
+      <View>
+        <TextInput
+          label="Email"
+          style={styles.inputstyle}
+          left={<TextInput.Icon name="email" color="#ff7f56" />}
+          theme={{
+            colors: {
+              placeholder: "white",
+              text: "white",
+              primary: "white",
+              underlineColor: "#043b30",
+              background: "#000",
+            },
+          }}
+        />
+        <TextInput
+          label="Password"
+          secureTextEntry
+          style={styles.inputstyle}
+          outlineColor="#fff"
+          activeOutlineColor="#fff"
+          left={<TextInput.Icon name="key" color="#ff7f56" />}
+          theme={{
+            colors: {
+              placeholder: "white",
+              text: "white",
+              primary: "white",
+              underlineColor: "#043b30",
+              background: "#000",
+            },
+          }}
+        />
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginTop: 20,
+          marginBottom: 20,
+        }}
       >
-        <View style={styles.btn_container}>
-          <Button
-            mode="contained"
-            style={[styles.btn, styles.btn1]}
-            labelStyle={{ fontWeight: "700" }}
-            onPress={() => console.log("Pressed")}
-          >
-            SignIn
-          </Button>
-          <Button
-            mode="contained"
-            style={[styles.btn, styles.btn2]}
-            color="#000"
-            labelStyle={{ color: "green", fontWeight: "700" }}
-            onPress={() => console.log("Pressed")}
-          >
-            SignUp
-          </Button>
-        </View>
-      </ImageBackground>
+        <TouchableOpacity
+          onPress={(e) => {
+            toggle_login_modal();
+            toggle_signup_modal();
+          }}
+        >
+          <Text style={{ color: "green", fontWeight: "800" }}>SignUp</Text>
+        </TouchableOpacity>
+        <Text style={{ color: "#ff7f56", fontWeight: "600" }}>
+          forgot password ?
+        </Text>
+      </View>
+
+      <View style={styles.btn_container}>
+        <Button
+          mode="contained"
+          style={[styles.btn, styles.btn1]}
+          labelStyle={{ fontWeight: "700" }}
+          onPress={() => console.log("Pressed")}
+        >
+          SignIn
+        </Button>
+      </View>
     </View>
   );
 };
 
-export default login;
+export default Login;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      },
-      image: {
-        flex: 1,
-        justifyContent: "center",
-        height: Dimensions.get("screen").height,
-        width: "100%",
-      },
-      btn_container: {
-        flex: 1,
-        justifyContent: "flex-end",
-        alignItems: "center",
-        paddingLeft: 10,
-        paddingRight: 10,
-        marginBottom: 100,
-      },
-      btn: {
-        width: 200,
-        padding: 10,
-        marginBottom: 10,
-        borderRadius: 20,
-      },
-      btn1: {
-        backgroundColor: "green",
-      },
+  container: {
+    flex: 1,
+    width: "100%",
+    padding: 30,
+    paddingLeft: 15,
+    paddingRight: 15,
+    backgroundColor: "#000",
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+  },
+  dot: {
+    height: 10,
+    width: 10,
+    backgroundColor: "green",
+    borderRadius: 100,
+  },
+  inputstyle: {
+    marginBottom: 10,
+    color: "#fff",
+  },
+  btn_container: {
+    justifyContent: "center",
+    alignItems: "center",
+    paddingLeft: 10,
+    paddingRight: 10,
+    marginBottom: 100,
+  },
+  btn: {
+    width: 200,
+    padding: 15,
+    marginBottom: 10,
+    borderRadius: 20,
+  },
+  btn1: {
+    backgroundColor: "#043b30",
+  },
 });
