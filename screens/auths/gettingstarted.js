@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { Button } from "react-native-paper";
 import Login from "./login";
+import SignUp from "./signup";
 
 const Gettingstarted = () => {
   const [loginmodal, setloginmodal] = useState(false);
@@ -40,7 +41,7 @@ const Gettingstarted = () => {
             style={[styles.btn, styles.btn2]}
             color="#000"
             labelStyle={{ color: "green", fontWeight: "700" }}
-            onPress={() => console.log("Pressed")}
+            onPress={() => toggle_signup_modal()}
           >
             SignUp
           </Button>
@@ -51,12 +52,30 @@ const Gettingstarted = () => {
           visible={loginmodal}
           onRequestClose={() => {
             Alert.alert("Modal has been closed.");
-            setModalVisible(!modalVisible);
+            toggle_login_modal()
           }}
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Login
+                toggle_login_modal={toggle_login_modal}
+                toggle_signup_modal={toggle_signup_modal}
+              />
+            </View>
+          </View>
+        </Modal>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={signupmodal}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            toggle_signup_modal()
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView2}>
+              <SignUp
                 toggle_login_modal={toggle_login_modal}
                 toggle_signup_modal={toggle_signup_modal}
               />
@@ -90,7 +109,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     width: 200,
-    padding: 10,
+    padding: 15,
     marginBottom: 10,
     borderRadius: 20,
   },
@@ -108,6 +127,20 @@ const styles = StyleSheet.create({
   modalView: {
     borderTopLeftRadius: 100,
     height: Dimensions.get("screen").height / 1.8,
+    width: "100%",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalView2: {
+    borderTopLeftRadius: 100,
+    height: Dimensions.get("screen").height / 1.6,
     width: "100%",
     alignItems: "center",
     shadowColor: "#000",
