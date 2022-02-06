@@ -7,8 +7,8 @@ import {
   View,
 } from "react-native";
 import { Button } from "react-native-paper";
-import Login from "./login";
-import SignUp from "./signup";
+import Login from "./component/login";
+import SignUp from "./component/signup";
 
 const Gettingstarted = () => {
   const [loginmodal, setloginmodal] = useState(false);
