@@ -38,7 +38,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <View>
+    <View style={{ paddingBottom: 20 }}>
       <Text style={styles.title}> Latest Blog</Text>
       <ScrollView>
         {news ? (
@@ -50,7 +50,12 @@ const Blog = () => {
                   style={styles.icon}
                 />
               </View>
-              <View>
+              <View
+                style={{
+                  width: Dimensions.get("window").width - 50,
+                  paddingHorizontal: 15,
+                }}
+              >
                 <Text style={styles.source}>{data.source}</Text>
                 <Text style={styles.desc}>{data.title}</Text>
                 <Text style={styles.link}>
@@ -126,6 +131,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#fafafa",
     marginVertical: 10,
+    flexShrink: 1,
   },
   link: {
     fontSize: 15,
