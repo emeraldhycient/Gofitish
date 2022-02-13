@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     height: 200,
     width: Dimensions.get("screen").width - 30,
     backgroundColor: "#1A374D",
-    borderRadius: 20,
+    borderRadius: 10,
     marginHorizontal: 5,
     marginTop: 10,
     justifyContent: "space-between",
