@@ -52,8 +52,10 @@ const Blog = () => {
               </View>
               <View
                 style={{
-                  width: Dimensions.get("window").width - 50,
+                  width: Dimensions.get("window").width - 20,
                   paddingHorizontal: 15,
+                  flexShrink: 1,
+                  padding: 5,
                 }}
               >
                 <Text style={styles.source}>{data.source}</Text>
@@ -102,17 +104,13 @@ const styles = StyleSheet.create({
     marginTop: 2,
     marginBottom: 2,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     alignItems: "center",
-    padding: 5,
   },
   iconcontainer: {
     backgroundColor: "#cacaca",
-    height: 40,
-    width: 40,
-    marginRight: 10,
-    marginTop: 10,
-    borderRadius: 100,
+    height: 105,
+    borderRadius: 8,
     justifyContent: "center",
     alignItems: "center",
     padding: 5,
