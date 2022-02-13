@@ -21,10 +21,9 @@ const Header = () => {
             />
           </View>
         </TouchableOpacity>
-        <View><Text style={{fontSize:30,fontWeight:'bold',color:"green"}}>Gofitish</Text></View>
         <TouchableOpacity>
           <View>
-            <Fontisto name="bell" size={25} color="#fff" />
+            <Fontisto name="bell" size={23} color="#fff" />
           </View>
         </TouchableOpacity>
       </View>
@@ -37,7 +36,7 @@ export default Header;
 const styles = StyleSheet.create({
   header: {
     backgroundColor: "#000",
-    height: 90,
+    height: 70,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
