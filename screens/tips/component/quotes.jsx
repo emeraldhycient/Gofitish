@@ -49,7 +49,7 @@ const Quotes = () => {
         {allquote ? (
           allquote.map((qte, i) => (
             <TouchableOpacity key={i}>
-              <View style={styles.quotes} key={i}>
+              <View style={[styles.quotes, styles.shadowProp]} key={i}>
                 <View style={styles.iconcontainer}>
                   <MaterialCommunityIcons
                     name="comment-quote-outline"
@@ -58,7 +58,7 @@ const Quotes = () => {
                   />
                 </View>
                 <Text style={styles.desc}>{qte.quote}</Text>
-                <Text style={styles.author}>Author : {qte.author}</Text>
+                <Text style={styles.author}>--- {qte.author}</Text>
               </View>
             </TouchableOpacity>
           ))
@@ -80,19 +80,20 @@ const styles = StyleSheet.create({
     fontSize: 21,
     fontWeight: "bold",
     marginLeft: 20,
-    marginVertical: 10,
-    color: "purple",
+    marginVertical: 25,
+    color: "#fff",
   },
   quotes: {
     height: 200,
-    width: Dimensions.get("screen").width - 30,
-    backgroundColor: "#1A374D",
+    width: Dimensions.get("screen").width - 40,
+    backgroundColor: "#000",
     borderRadius: 10,
     marginHorizontal: 5,
     marginTop: 10,
     justifyContent: "space-between",
     paddingBottom: 20,
     paddingHorizontal: 15,
+    marginBottom: 10,
   },
   iconcontainer: {
     backgroundColor: "#cacaca",
@@ -113,11 +114,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 5,
     fontWeight: "bold",
-    color: "#fafafa",
+    color: "#f4f4f4",
   },
   author: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "yellow",
+    color: "red",
+  },
+  shadowProp: {
+    shadowColor: "#fff",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
   },
 });

@@ -44,15 +44,15 @@ const Blog = () => {
         {news ? (
           news.map((data, i) => (
             <View style={styles.Blog} key={i}>
-              <View style={styles.iconcontainer}>
+              <View style={[styles.iconcontainer, styles.shadowProp]}>
                 <Image
-                  source={require("../../../assets/images/abs.png")}
+                  source={{ uri: "https://source.unsplash.com/random" }}
                   style={styles.icon}
                 />
               </View>
               <View
                 style={{
-                  width: Dimensions.get("window").width - 20,
+                  width: Dimensions.get("window").width,
                   paddingHorizontal: 15,
                   flexShrink: 1,
                   padding: 5,
@@ -61,7 +61,7 @@ const Blog = () => {
                 <Text style={styles.source}>{data.source}</Text>
                 <Text style={styles.desc}>{data.title}</Text>
                 <Text style={styles.link}>
-                  Read More <Entypo name="link" color="yellow" size={20} />
+                  Read More <Entypo name="link" color="red" size={20} />
                 </Text>
               </View>
             </View>
@@ -92,37 +92,36 @@ const styles = StyleSheet.create({
     fontSize: 21,
     fontWeight: "bold",
     marginLeft: 20,
-    marginVertical: 15,
+    marginVertical: 25,
     color: "#FFFFFF",
   },
   Blog: {
     height: 110,
     width: Dimensions.get("screen").width - 15,
-    backgroundColor: "#04293A",
+    backgroundColor: "#202028",
     borderRadius: 8,
     marginHorizontal: 5,
     marginTop: 2,
-    marginBottom: 2,
+    marginBottom: 6,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
   },
   iconcontainer: {
-    backgroundColor: "#cacaca",
-    height: 105,
     borderRadius: 8,
     justifyContent: "center",
     alignItems: "center",
     padding: 5,
   },
   icon: {
-    height: 30,
-    width: 30,
+    height: 40,
+    width: 40,
+    borderRadius: 30,
   },
   source: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "yellow",
+    color: "#c4c4c4",
     width: Dimensions.get("screen").width - 50,
   },
   desc: {
@@ -134,5 +133,15 @@ const styles = StyleSheet.create({
   link: {
     fontSize: 15,
     color: "#c5c5c5",
+  },
+  shadowProp: {
+    shadowColor: "#fff",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
   },
 });

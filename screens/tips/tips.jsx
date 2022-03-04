@@ -22,6 +22,6 @@ export default Tip;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#121212",
+    backgroundColor: "#000",
   },
 });

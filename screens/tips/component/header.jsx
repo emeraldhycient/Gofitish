@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
+    borderBottomColor: "#c6c6c6",
+    borderBottomWidth: 2,
   },
   humancontainer: {
     backgroundColor: "#cacaca",

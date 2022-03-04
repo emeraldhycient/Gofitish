@@ -80,7 +80,7 @@ const Excercise = () => {
         {excersies ? (
           excersies.map((ex, i) => (
             <TouchableOpacity key={i}>
-              <View style={styles.excercise}>
+              <View style={[styles.excercise, styles.shadowProp]}>
                 <View style={styles.iconcontainer}>
                   <Image
                     source={{ uri: ex.gifUrl }}
@@ -89,7 +89,8 @@ const Excercise = () => {
                   />
                 </View>
                 <View style={{ marginLeft: 10, marginTop: 10 }}>
-                  <Text style={styles.desc}>Name: {ex.name}</Text>
+                  <Text style={styles.name}>{ex.name}</Text>
+                  <View style={styles.dot}></View>
                   <Text style={styles.desc}>Bodypart: {ex.bodyPart}</Text>
                   <Text style={styles.desc}>Equipment: {ex.equipment}</Text>
                   <Text style={styles.desc}>Target: {ex.target}</Text>
@@ -115,21 +116,22 @@ const styles = StyleSheet.create({
     fontSize: 21,
     fontWeight: "bold",
     marginLeft: 20,
-    marginVertical: 10,
-    color: "yellow",
+    marginVertical: 25,
+    color: "#fff",
   },
   excercise: {
     height: 300,
-    width: Dimensions.get("screen").width - 30,
-    backgroundColor: "#04293A",
+    width: Dimensions.get("screen").width - 40,
+    backgroundColor: "#000",
     borderRadius: 10,
     marginHorizontal: 5,
     marginTop: 10,
+    marginBottom: 10,
   },
   iconcontainer: {
     backgroundColor: "#cacaca",
     height: 150,
-    width: Dimensions.get("screen").width - 30,
+    width: Dimensions.get("screen").width - 40,
     marginTop: 2,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
@@ -138,7 +140,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     height: 150,
-    width: Dimensions.get("screen").width - 32,
+    width: Dimensions.get("screen").width - 42,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
@@ -146,6 +148,31 @@ const styles = StyleSheet.create({
     fontSize: 17,
     marginTop: 10,
     fontWeight: "bold",
+    color: "#c5c5c5",
+  },
+  name: {
+    fontSize: 23,
+    marginTop: 10,
+    fontWeight: "800",
     color: "#fafafa",
+    textAlign: "center",
+  },
+  dot: {
+    height: 2,
+    width: "40%",
+    backgroundColor: "red",
+    borderRadius: 100,
+    marginVertical: 5,
+  },
+  shadowProp: {
+    shadowColor: "#fff",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
 });
