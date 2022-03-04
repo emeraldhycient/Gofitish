@@ -40,7 +40,7 @@ const Gettingstarted = () => {
             mode="contained"
             style={[styles.btn, styles.btn2]}
             color="#000"
-            labelStyle={{ color: "#043b30", fontWeight: "700" }}
+            labelStyle={{ color: "#fff", fontWeight: "700" }}
             onPress={() => toggle_signup_modal()}
           >
             SignUp
@@ -52,7 +52,7 @@ const Gettingstarted = () => {
           visible={loginmodal}
           onRequestClose={() => {
             Alert.alert("Modal has been closed.");
-            toggle_login_modal()
+            toggle_login_modal();
           }}
         >
           <View style={styles.centeredView}>
@@ -70,7 +70,7 @@ const Gettingstarted = () => {
           visible={signupmodal}
           onRequestClose={() => {
             Alert.alert("Modal has been closed.");
-            toggle_signup_modal()
+            toggle_signup_modal();
           }}
         >
           <View style={styles.centeredView}>
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   btn1: {
-    backgroundColor: "#043b30",
+    backgroundColor: "red",
   },
 
   centeredView: {

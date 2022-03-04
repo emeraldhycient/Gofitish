@@ -58,7 +58,7 @@ const Login = ({ toggle_login_modal, toggle_signup_modal }) => {
             toggle_signup_modal();
           }}
         >
-          <Text style={{ color: "green", fontWeight: "800" }}>SignUp</Text>
+          <Text style={{ color: "#f6f6f6", fontWeight: "800" }}>SignUp</Text>
         </TouchableOpacity>
         <Text style={{ color: "#ff7f56", fontWeight: "600" }}>
           forgot password ?
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   dot: {
     height: 10,
     width: 10,
-    backgroundColor: "green",
+    backgroundColor: "red",
     borderRadius: 100,
   },
   inputstyle: {
@@ -116,6 +116,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   btn1: {
-    backgroundColor: "#043b30",
+    backgroundColor: "red",
   },
 });

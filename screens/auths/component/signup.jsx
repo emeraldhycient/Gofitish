@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   dot: {
     height: 10,
     width: 10,
-    backgroundColor: "green",
+    backgroundColor: "red",
     borderRadius: 100,
   },
   inputstyle: {
@@ -126,6 +126,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   btn1: {
-    backgroundColor: "#043b30",
+    backgroundColor: "red",
   },
 });

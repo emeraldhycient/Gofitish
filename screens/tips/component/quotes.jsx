@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   author: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "red",
+    color: "#ff7f56",
   },
   shadowProp: {
     shadowColor: "#fff",

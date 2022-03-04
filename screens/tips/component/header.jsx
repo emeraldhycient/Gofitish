@@ -12,7 +12,7 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 const Header = () => {
   return (
     <SafeAreaView>
-      <View style={styles.header}>
+      <View style={[styles.header, styles.shadowProp]}>
         <TouchableOpacity>
           <View style={styles.humancontainer}>
             <Image
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
-    borderBottomColor: "#c6c6c6",
+    borderBottomColor: "#ff7f56",
     borderBottomWidth: 2,
   },
   humancontainer: {
@@ -55,5 +55,15 @@ const styles = StyleSheet.create({
   human: {
     height: 40,
     width: 40,
+  },
+  shadowProp: {
+    shadowColor: "#fff",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
   },
 });
