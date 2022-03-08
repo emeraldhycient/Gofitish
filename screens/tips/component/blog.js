@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 21,
+    fontSize: 19,
     fontWeight: "bold",
     marginLeft: 20,
     marginVertical: 25,

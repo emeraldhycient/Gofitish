@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 17,
   },
   title: {
-    fontSize: 21,
+    fontSize: 19,
     fontWeight: "bold",
     marginLeft: 20,
     marginVertical: 25,
@@ -145,15 +145,18 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
   },
   desc: {
-    fontSize: 17,
+    // fontSize: 17,
+    fontSize: 16,
     marginTop: 10,
     fontWeight: "bold",
     color: "#c5c5c5",
   },
   name: {
-    fontSize: 23,
+    /* fontSize: 23,
+    fontWeight: "800",*/
+    fontSize: 16,
+    fontWeight: "bold",
     marginTop: 10,
-    fontWeight: "800",
     color: "#fafafa",
     textAlign: "center",
   },

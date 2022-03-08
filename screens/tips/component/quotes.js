@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 17,
   },
   title: {
-    fontSize: 21,
+    fontSize: 19,
     fontWeight: "bold",
     marginLeft: 20,
     marginVertical: 25,
@@ -111,13 +111,13 @@ const styles = StyleSheet.create({
     width: 30,
   },
   desc: {
-    fontSize: 16,
+    fontSize: 15,
     marginTop: 5,
     fontWeight: "bold",
     color: "#f4f4f4",
   },
   author: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: "bold",
     color: "#ff7f56",
   },

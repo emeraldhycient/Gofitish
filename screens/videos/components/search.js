@@ -8,7 +8,7 @@ const Search = () => {
   return (
     <View style={[styles.container, styles.shadowProp]}>
       <TextInput
-        placeholder="Email"
+        placeholder="Search exercise"
         value={text}
         onChangeText={(text) => setText(text)}
         mode="outlined"
@@ -26,10 +26,14 @@ export default Search;
 const styles = StyleSheet.create({
   container: {
     width: Dimensions.get("window").width,
-    backgroundColor: "#202028",
+    backgroundColor: "#212922",
+    paddingBottom: 5,
   },
   input: {
     marginBottom: 2,
+    marginHorizontal: 3,
+    height: 50,
+    backgroundColor: "#c9c9c9",
   },
   shadowProp: {
     shadowColor: "#fff",
