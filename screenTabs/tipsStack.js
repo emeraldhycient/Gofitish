@@ -7,8 +7,16 @@ const Stack = createNativeStackNavigator();
 const TipsStack = () => (
   <Stack.Navigator>
     <Stack.Group>
-      <Stack.Screen name="Tip" component={Tip} />
-      <Stack.Screen name="news" component={ModalScreen} />
+      <Stack.Screen
+        name="Tip"
+        options={{ headerShown: false }}
+        component={Tip}
+      />
+      <Stack.Screen
+        name="news"
+        component={ModalScreen}
+        options={({ route }) => ({ title: route.params.title })}
+      />
     </Stack.Group>
   </Stack.Navigator>
 );

@@ -65,7 +65,12 @@ const Blog = ({ navigation }) => {
                 <Text style={styles.desc}>{data.title}</Text>
                 <Text
                   style={styles.link}
-                  onPress={() => navigation.navigate("news", { url: data.url })}
+                  onPress={() =>
+                    navigation.navigate("news", {
+                      url: data.url,
+                      title: data.title,
+                    })
+                  }
                 >
                   Read More <Entypo name="link" color="red" size={20} />
                 </Text>

@@ -64,7 +64,7 @@ const Excercise = () => {
       .then((response) => {
         const exercisedb = response.data
           .sort(() => Math.random() - Math.random())
-          .slice(0, 3);
+          .slice(0, 5);
         setexcersies(exercisedb);
       })
       .catch((error) => {

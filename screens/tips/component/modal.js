@@ -5,7 +5,13 @@ import { WebView } from "react-native-webview";
 const ModalScreen = ({ route, navigation }) => {
   const { url } = route.params;
 
-  return <WebView style={styles.container} source={{ uri: url }} />;
+  return (
+    <WebView
+      style={styles.container}
+      originWhitelist={["*"]}
+      source={{ uri: url }}
+    />
+  );
 };
 
 export default ModalScreen;
