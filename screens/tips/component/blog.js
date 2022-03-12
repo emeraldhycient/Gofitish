@@ -72,7 +72,7 @@ const Blog = ({ navigation }) => {
                     })
                   }
                 >
-                  Read More <Entypo name="link" color="red" size={20} />
+                  Read More <Entypo name="link" color="#694fad" size={20} />
                 </Text>
               </View>
             </View>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   Blog: {
-    height: 110,
+    height: 130,
     width: Dimensions.get("screen").width - 15,
     backgroundColor: "#202028",
     borderRadius: 8,

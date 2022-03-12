@@ -102,7 +102,30 @@ const Excercise = () => {
             </TouchableOpacity>
           ))
         ) : (
-          <View style={styles.excercise}></View>
+          <>
+            <TouchableOpacity key={i}>
+              <View style={[styles.excercise, styles.shadowProp]}>
+                <View style={styles.iconcontainer}>
+                  <Image
+                    source={{
+                      uri: "http://d205bpvrqc9yn1.cloudfront.net/2141.gif",
+                    }}
+                    style={styles.icon}
+                    resizeMode="cover"
+                  />
+                </View>
+                <View style={{ marginLeft: 10, marginTop: 10 }}>
+                  <Text style={styles.name}>
+                    loading.... pls check your network
+                  </Text>
+                  <View style={styles.dot}></View>
+                  <Text style={styles.desc}>Bodypart: cardio</Text>
+                  <Text style={styles.desc}>Equipment: elliptical machine</Text>
+                  <Text style={styles.desc}>Target: cardiovascular system</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          </>
         )}
       </ScrollView>
     </View>
@@ -125,7 +148,7 @@ const styles = StyleSheet.create({
   excercise: {
     height: 300,
     width: Dimensions.get("screen").width - 40,
-    backgroundColor: "#000",
+    backgroundColor: "#202028",
     borderRadius: 10,
     marginHorizontal: 5,
     marginTop: 10,
@@ -166,7 +189,7 @@ const styles = StyleSheet.create({
   dot: {
     height: 2,
     width: "40%",
-    backgroundColor: "red",
+    backgroundColor: "#694fad",
     borderRadius: 100,
     marginVertical: 5,
   },

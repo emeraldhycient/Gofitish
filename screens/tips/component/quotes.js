@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   quotes: {
     height: 200,
     width: Dimensions.get("screen").width - 10,
-    backgroundColor: "#000",
+    backgroundColor: "#202028",
     borderRadius: 10,
     marginHorizontal: 5,
     marginTop: 10,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   author: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "#ff7f56",
+    color: "#694fad",
   },
   shadowProp: {
     shadowColor: "#fff",

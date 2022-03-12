@@ -12,9 +12,11 @@ const Search = () => {
         value={text}
         onChangeText={(text) => setText(text)}
         mode="outlined"
-        outlineColor="#ccc"
-        activeOutlineColor="#ff7f56"
-        right={<TextInput.Icon name="filter" />}
+        outlineColor="grey"
+        activeOutlineColor="#694fad"
+        placeholderTextColor="white"
+        selectionColor="white"
+        right={<TextInput.Icon name="filter" color="#694fad" />}
         style={[styles.input, styles.shadowProp]}
       />
     </View>
@@ -33,7 +35,8 @@ const styles = StyleSheet.create({
     marginBottom: 2,
     marginHorizontal: 3,
     height: 50,
-    backgroundColor: "#c9c9c9",
+    color: "#fff",
+    backgroundColor: "#131324",
   },
   shadowProp: {
     shadowColor: "#fff",
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
       height: 3,
     },
     shadowOpacity: 0.27,
-    shadowRadius: 4.65,
+    shadowRadius: 1.65,
     elevation: 6,
   },
 });

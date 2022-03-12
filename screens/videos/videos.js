@@ -48,7 +48,6 @@ const Videos = () => {
               <Videobanner />
               <Videobanner />
               <Videobanner />
-              <Videobanner />
             </View>
           </ScrollView>
         </View>

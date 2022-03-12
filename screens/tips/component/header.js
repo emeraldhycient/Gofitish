@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
-    borderBottomColor: "#ff7f56",
+    borderBottomColor: "#694fad",
     borderBottomWidth: 2,
   },
   humancontainer: {
