@@ -30,7 +30,10 @@ const Quotes = () => {
       .request(options)
       .then((response) => {
         if (response.status === 200) {
-          setallquote(response.data);
+          const quotedata = response.data
+            .sort(() => Math.random() - Math.random())
+            .slice(0, 1);
+          setallquote(quotedata);
         } else {
           console.log("somethibng occured");
         }
@@ -45,27 +48,25 @@ const Quotes = () => {
   return (
     <View>
       <Text style={styles.title}>Fitness Quotes</Text>
-      <ScrollView horizontal>
-        {allquote ? (
-          allquote.map((qte, i) => (
-            <TouchableOpacity key={i}>
-              <View style={[styles.quotes, styles.shadowProp]} key={i}>
-                <View style={styles.iconcontainer}>
-                  <MaterialCommunityIcons
-                    name="comment-quote-outline"
-                    size={30}
-                    color="green"
-                  />
-                </View>
-                <Text style={styles.desc}>{qte.quote}</Text>
-                <Text style={styles.author}>--- {qte.author}</Text>
+      {allquote ? (
+        allquote.map((qte, i) => (
+          <TouchableOpacity key={i}>
+            <View style={[styles.quotes, styles.shadowProp]} key={i}>
+              <View style={styles.iconcontainer}>
+                <MaterialCommunityIcons
+                  name="comment-quote-outline"
+                  size={30}
+                  color="green"
+                />
               </View>
-            </TouchableOpacity>
-          ))
-        ) : (
-          <View style={styles.quotes}></View>
-        )}
-      </ScrollView>
+              <Text style={styles.desc}>{qte.quote}</Text>
+              <Text style={styles.author}>--- {qte.author}</Text>
+            </View>
+          </TouchableOpacity>
+        ))
+      ) : (
+        <View style={styles.quotes}></View>
+      )}
     </View>
   );
 };
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
   },
   quotes: {
     height: 200,
-    width: Dimensions.get("screen").width - 40,
+    width: Dimensions.get("screen").width - 10,
     backgroundColor: "#000",
     borderRadius: 10,
     marginHorizontal: 5,

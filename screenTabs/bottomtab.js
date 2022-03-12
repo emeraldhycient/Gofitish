@@ -1,14 +1,16 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Gettingstarted from "../screens/auths/gettingstarted";
-import Tip from "../screens/tips/tips";
+//import Tip from "../screens/tips/tips";
+import TipsStack from "./tipsStack";
 import Videos from "../screens/videos/videos";
+import Market from "../screens/market/market";
 
 const Tab = createMaterialBottomTabNavigator();
 
 const Bottomtab = () => (
   <Tab.Navigator
-    initialRouteName="tips"
+    initialRouteName="Tips"
     barStyle={{ backgroundColor: "#694fad", paddingBottom: 3 }}
   >
     <Tab.Screen
@@ -23,7 +25,7 @@ const Bottomtab = () => (
     />
     <Tab.Screen
       name="Tips"
-      component={Tip}
+      component={TipsStack}
       options={{
         tabBarLabel: "Tips",
         tabBarIcon: ({ color }) => (
@@ -37,7 +39,7 @@ const Bottomtab = () => (
     />
     <Tab.Screen
       name="Market"
-      component={Tip}
+      component={Market}
       options={{
         tabBarLabel: "Market",
         tabBarIcon: ({ color }) => (

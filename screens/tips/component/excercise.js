@@ -62,7 +62,10 @@ const Excercise = () => {
     axios
       .request(options)
       .then((response) => {
-        setexcersies(response.data);
+        const exercisedb = response.data
+          .sort(() => Math.random() - Math.random())
+          .slice(0, 3);
+        setexcersies(exercisedb);
       })
       .catch((error) => {
         console.error(error);

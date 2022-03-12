@@ -5,14 +5,14 @@ import Quotes from "./component/quotes";
 import Excercise from "./component/excercise";
 import Blog from "./component/blog";
 
-const Tip = () => {
+const Tip = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView>
         <Header />
         <Excercise />
         <Quotes />
-        <Blog />
+        <Blog navigation={navigation} />
       </ScrollView>
     </View>
   );

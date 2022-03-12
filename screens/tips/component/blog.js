@@ -10,7 +10,7 @@ import React, { useLayoutEffect, useState } from "react";
 import axios from "axios";
 import Entypo from "react-native-vector-icons/Entypo";
 
-const Blog = () => {
+const Blog = ({ navigation }) => {
   const [news, setnews] = useState([]);
 
   const getNews = () => {
@@ -26,7 +26,10 @@ const Blog = () => {
     axios
       .request(options)
       .then(function (response) {
-        setnews(response.data);
+        const newsdata = response.data
+          .sort(() => Math.random() - Math.random())
+          .slice(0, 10);
+        setnews(newsdata);
       })
       .catch(function (error) {
         console.error(error);
@@ -60,7 +63,10 @@ const Blog = () => {
               >
                 <Text style={styles.source}>{data.source}</Text>
                 <Text style={styles.desc}>{data.title}</Text>
-                <Text style={styles.link}>
+                <Text
+                  style={styles.link}
+                  onPress={() => navigation.navigate("news", { url: data.url })}
+                >
                   Read More <Entypo name="link" color="red" size={20} />
                 </Text>
               </View>
