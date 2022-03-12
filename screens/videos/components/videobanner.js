@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
     position: "relative",
     height: 200,
     width: 200,
+    backgroundColor: "#fff",
+    borderRadius: 7,
   },
   title: {
     flexDirection: "row",

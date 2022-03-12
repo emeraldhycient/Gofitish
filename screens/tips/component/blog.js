@@ -4,6 +4,7 @@ import {
   View,
   ScrollView,
   Dimensions,
+  TouchableOpacity,
   Image,
 } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
@@ -63,17 +64,19 @@ const Blog = ({ navigation }) => {
               >
                 <Text style={styles.source}>{data.source}</Text>
                 <Text style={styles.desc}>{data.title}</Text>
-                <Text
-                  style={styles.link}
-                  onPress={() =>
-                    navigation.navigate("news", {
-                      url: data.url,
-                      title: data.title,
-                    })
-                  }
-                >
-                  Read More <Entypo name="link" color="#694fad" size={20} />
-                </Text>
+                <TouchableOpacity>
+                  <Text
+                    style={styles.link}
+                    onPress={() =>
+                      navigation.navigate("news", {
+                        url: data.url,
+                        title: data.title,
+                      })
+                    }
+                  >
+                    Read More <Entypo name="link" color="#694fad" size={20} />
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
           ))

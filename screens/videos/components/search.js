@@ -15,9 +15,13 @@ const Search = () => {
         outlineColor="grey"
         activeOutlineColor="#694fad"
         placeholderTextColor="white"
-        selectionColor="white"
         right={<TextInput.Icon name="filter" color="#694fad" />}
         style={[styles.input, styles.shadowProp]}
+        theme={{
+          colors: {
+            text: "white",
+          },
+        }}
       />
     </View>
   );
@@ -35,7 +39,6 @@ const styles = StyleSheet.create({
     marginBottom: 2,
     marginHorizontal: 3,
     height: 50,
-    color: "#fff",
     backgroundColor: "#131324",
   },
   shadowProp: {
