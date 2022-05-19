@@ -4,7 +4,8 @@ import Gettingstarted from "../screens/auths/gettingstarted";
 //import Tip from "../screens/tips/tips";
 import TipsStack from "./tipsStack";
 import Videos from "../screens/videos/videos";
-import Market from "../screens/market/market";
+import MarketStack from "./marketStack";
+import Podcast from "../screens/podcasts/podcast";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -38,8 +39,22 @@ const Bottomtab = () => (
       }}
     />
     <Tab.Screen
+      name="podcast"
+      component={Podcast}
+      options={{
+        tabBarLabel: "Podcast",
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons
+            name="speaker-multiple"
+            color={color}
+            size={26}
+          />
+        ),
+      }}
+    />
+    <Tab.Screen
       name="Market"
-      component={Market}
+      component={MarketStack}
       options={{
         tabBarLabel: "Market",
         tabBarIcon: ({ color }) => (
